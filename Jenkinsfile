@@ -49,7 +49,7 @@ pipeline {
       echo "❌ Pipeline failed"
     }
     success {
-      echo "✅ Deployed to EC2 at IP: 34.234.124.139"
+      echo "✅ Deployed to EC2 Instance"
     }
   }
 }
