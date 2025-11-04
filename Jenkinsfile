@@ -21,7 +21,7 @@ pipeline {
         withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKERHUB_USERNAME', passwordVariable: 'DOCKERHUB_PASSWORD')]) {
           sh """
             echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-            docker build -t ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:${GIT_COMMIT} . && \ 
+            docker build -t ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:${GIT_COMMIT} . &&
             docker push ${DOCKERHUB_USERNAME}/${IMAGE_NAME}   
           """
         }
