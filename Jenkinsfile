@@ -20,9 +20,8 @@ pipeline {
       steps {
         withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKERHUB_USERNAME', passwordVariable: 'DOCKERHUB_PASSWORD')]) {
           sh """
-            echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-            docker build -t ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:${GIT_COMMIT} . &&
-            docker push ${DOCKERHUB_USERNAME}/${IMAGE_NAME}   
+           chmod +x build_and_push.sh
+        ./build_and_push.sh "$DOCKERHUB_USERNAME" "$DOCKERHUB_PASSWORD" "$IMAGE_NAME" "$GIT_COMMIT"
           """
         }
       }
