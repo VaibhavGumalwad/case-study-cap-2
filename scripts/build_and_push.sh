@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-GIT_COMMIT=$(GIT_COMMIT:-latest)
+GIT_COMMIT='latest'
 IMAGE="vaibhavgumalwad/myapp:$GIT_COMMIT"
 
 echo "🐳 Building Docker image: $IMAGE"
