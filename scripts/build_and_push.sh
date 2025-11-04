@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-GIT_COMMIT=$(git rev-parse --short HEAD)
+GIT_COMMIT=$(GIT_COMMIT)
 IMAGE="vaibhavgumalwad/myapp:$GIT_COMMIT"
 
 echo "🔐 Logging in to DockerHub..."
