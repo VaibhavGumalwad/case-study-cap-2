@@ -12,7 +12,7 @@ COPY src/ src/
 COPY public/ public/
 
 # Expose the app port
-EXPOSE 80
+EXPOSE 8088
 
 # Start the application
 CMD ["node", "src/index.js"]
